@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <title>Название сайта</title>
+    <link rel="stylesheet" href="css/style.css" >
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="format-detection" content="telephone=no">
+  </head>
+  <body >
+    <include src="app/html/header-inside.html"></include>
+    <main class="main">
+      <include src="app/html/top-naked.html" locals='{"name": "Блог"}'></include>
+      <section class="blog inside-page">
+        <div class="blog__container container ">
+          <include src="app/html/blog-categories.html"></include>
+          <include src="app/html/blog-popular.html" locals='{"class": "blog__popular gray"}'></include>
+          <include src="app/html/blog-list.html"></include>
+          <div class="blog__btn-wrapper">
+            <a href="#" class="btn btn--rounded btn--violet blog__btn" data-action="order"><span>Смотреть еще</span></a>
+          </div>
+        </div>
+        <div class="blog__form-wrapper container">
+          <img class="blog__form-img" src="../img/mailing-img.png" alt="" width="454" height="254">
+          <form action="" class="blog__form form">
+            <h3 class="h3">Подпишитесь на нашу рассылку</h3>
+            <label  class="form__label">
+                <input type="email" name="e-mail" class="input form__input required" placeholder="alexsandr.petrov@mail.ru">
+                <span class="form__input-name">Ваш e-mail*</span>
+                <span class="form__mistake">Это поле обязательно для заполнения</span>
+             </label>
+            <button type="submit" class="btn btn--rounded btn--violet form__btn">Подписаться</button>
+          </form>
+        </div>
+      </section>
+    </main>
+    <include src="app/html/footer.html"></include>
+    <include src="app/html/popup.html"></include>
+    <script src="js/index.js"></script>
+  </body>
+</html>

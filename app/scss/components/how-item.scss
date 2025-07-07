@@ -1,0 +1,46 @@
+.how-item {
+    position:relative;
+    display: grid;
+    grid-template-columns: minmax(0,1fr);
+    row-gap: 8px;
+}
+
+.how-item__num {
+    font-weight: 700;
+    font-size: 70px;
+    line-height: 1;
+    opacity: 0.2;
+}
+
+.how-item__name {
+    margin: 0;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 130%;
+}
+
+.how-item__text {
+    margin: 0;
+    font-size: 14px;
+    line-height: 130%;
+}
+
+@media (min-width: 540px) {
+    .how-item__name {
+        font-size: 24px;
+    }
+    
+    .how-item__text {
+        font-size: 16px;
+    }
+}
+
+@media (min-width: 1000px) {
+    .how-item__num {
+        padding-bottom: 8px;
+    }
+
+    .how-item {
+        padding-left: 0;
+    }
+}

@@ -1,0 +1,254 @@
+.bottom-form__wrapper {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: var(--padding);
+
+    a {
+        color: var(--text);
+        text-decoration: none;
+        transition: color 0.3s ease-in-out;
+    
+        &:hover,
+        &:focus {
+            color: var(--pink);
+        }
+    
+        &:active {
+            color: var(--violet);
+        }
+    }
+}
+
+.form__fieldset {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: var(--padding);
+}
+
+.form__label {
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: 6px;
+}
+
+.form__input-name {
+    margin: 0;
+    order: -1;
+    font-size: 14px;
+    line-height: 130%;
+    color: rgba(71, 71, 72, 0.6);
+
+    a {
+        color: var(--text);
+        transition: color 0.3s ease-in-out;
+
+        &:hover,
+        &:focus {
+            color: var(--pink);
+        }
+
+        &:active {
+            color: var(--violet);
+        }
+    }
+}
+
+.form__input,
+.form__textarea {
+    position: relative;
+    margin: 0;
+    font-style: inherit;
+    font-size: 14px;
+    line-height: 130%;
+    padding: 12px 16px;
+    background: var(--gray);
+    filter:  drop-shadow(0px 1px 1px var(--gray2));
+    border-radius: 24px;
+    border: 0;
+    transform: translateZ(0);
+
+    &:focus,
+    &:focus-within {
+        filter:  drop-shadow(0px 1px 1px #E1E1E1);
+        /*outline-style: outset;
+        outline-color: grey;
+        outline-width: 1px;*/
+        outline: 0;
+    }
+}
+
+.form__textarea {
+    display: flex;
+    margin-bottom: 5px;
+}
+
+.form__file {
+    position: absolute;
+    opacity: 0;
+}
+
+.form__label--file {
+    display: flex;
+    align-items: flex-start;
+    // flex-wrap: wrap;
+    column-gap: 8px;
+    padding-bottom: 8px;
+    flex-direction: column;
+}
+
+.form__textr {
+    margin: 0;
+    font-size: 14px;
+    line-height: 171%;
+}
+
+.form__label--checkbox{
+    display: flex;
+    align-items: center;
+    column-gap: 8px;
+}
+
+.form__label--checkbox .form__input-name {
+    color: var(--text);
+    order: 1;
+}
+
+.form__checkbox span {
+    display: flex;
+    align-items: center;
+    column-gap: 8px;
+}
+
+.form__checkbox input {
+    flex-shrink: 0;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+    border: 2px solid var(--text);
+
+    &:checked {
+        border-color: var(--violet);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-image: url('../img/tick.svg');
+    }
+}
+
+.form__mistake {
+    display:  none;
+    position: absolute;
+    right: 4px;
+    bottom: -16px;
+    font-size: 12px;
+    line-height: 130%;
+    text-align: right;
+    color: #EC1F1F;
+    opacity: 0.7;
+}
+
+.mistake .form__mistake {
+    display: block;
+}
+
+@media (min-width: 540px) {
+    .form__btn {
+        justify-self: flex-start;
+    }
+
+    .form__label--checkbox:last-of-type {
+        padding-bottom: 8px;
+    }
+}
+
+@media (min-width: 768px) {
+    @media (max-width: 999px) {
+    
+        .form__fieldset {
+            grid-template-columns: repeat(2, minmax(0, 2fr));
+            column-gap: var(--padding);
+        
+            .form__label:last-child:nth-child(odd) {
+                grid-column: 1 / -1;
+            }
+        }
+    }
+
+    .form__label--file {
+        padding-top: 8px;
+    }
+
+    .form__input, 
+    .form__textarea {
+        font-size: 16px;
+    }
+
+    .form__fieldset-popup {
+        display:flex;
+        flex-direction: column;
+
+
+        .form__label--file {
+            margin-top: auto;
+        }
+    }
+}
+
+.codedropz-upload-handler{
+    display: none;
+}
+
+.wpcf7 form .wpcf7-response-output {
+    display: none;
+}
+
+.wpcf7-spinner {
+    display: none;
+}
+
+.dnd-upload-status {
+    width: 100%;
+}
+
+.input-file__text{
+    display: flex;
+    gap: 10px;
+    cursor: pointer;
+}
+
+textarea {
+    resize: none;
+}
+
+textarea::-webkit-scrollbar {
+    display: none;
+}
+
+.mistake .cf7sr-g-recaptcha > div{
+    border: 1px solid red;
+}
+
+
+.form__label--captcha{
+    width: fit-content;
+}
+
+.form__label--captcha.mistake {
+    margin-bottom: 5px;
+}
+
+.flex-checkbox-label {
+    display: block;
+}
+
+@media screen and (max-width: 480px) {
+    .dnd-upload-details {
+        max-width: 240px;
+    }
+
+    .flex-checkbox-label {
+        display: flex;
+        flex-direction: column;
+    }
+}

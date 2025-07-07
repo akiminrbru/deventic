@@ -1,0 +1,14 @@
+.info {
+    display: flex;
+    align-items: center;
+    column-gap: 32px;
+    font-size: 14px;
+    line-height: 130%;
+    opacity: 0.6;
+
+    span {
+        display: flex;
+        align-items: center;
+        column-gap: 8px;
+    }
+}

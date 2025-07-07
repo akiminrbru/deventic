@@ -1,0 +1,11 @@
+.service__container .h2 {
+    margin-bottom: 27px;
+}
+
+@media (min-width: 1000px) {
+    .service__container {
+        display: grid;
+        grid-template-columns: minmax(0, 4fr) minmax(0, 8fr);
+        column-gap: 18px;
+    }
+}

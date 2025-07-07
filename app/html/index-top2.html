@@ -1,0 +1,179 @@
+<section class="index-top mb-100">
+    <style>
+        .index-top__blob {
+            position: relative;
+            --pink: rgba(255, 51, 227, 1);
+            --pink2: rgba(255, 51, 227, 0.8);
+            --blue: rgba(117, 111, 253, 1);
+            --blue2: rgb(73, 105, 225);
+            --violet: rgba(160, 47, 226, 1);
+        }
+        .index-top__blob:before,
+        .index-top__blob:after {
+            position: absolute;
+            top: 50%;
+            right: 0;
+            transform: translate(0, -50%);
+        }
+        .index-top__blob::before {
+            animation: anim2 30s infinite;
+            background: radial-gradient(circle at 0% 0%, rgba(255, 255, 255, 0.2), rgba(0, 0, 0, 0.8));
+            border-radius: 30% 70% 53% 47% / 26% 46% 54% 74%;
+            box-shadow: 0 -20px 40px rgba(255, 255, 255, 1) inset, 0 10px 40px rgba(0, 0, 0, 1) inset;
+            content: "";
+            height: 470px;
+            width: 460px;
+            filter: blur(1px);
+        }
+        
+        .index-top__blob::after {
+            animation: anim 30s infinite;
+            z-index:1;
+            background: radial-gradient(circle at 0% 0%, rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.3));
+            border-radius: 30% 70% 53% 47% / 26% 46% 54% 74%;
+            box-shadow: 0 -20px 40px rgba(255, 255, 255, 0.1) inset, 0 10px 40px rgba(0, 0, 0, 0.1) inset;
+            content: "";
+            height: 470px;
+            width: 460px;
+        }
+        
+        @keyframes anim2 {
+            0%,
+            100% {
+                border-radius: 30% 70% 70% 30% / 30% 52% 48% 70%;
+                box-shadow: 
+                40px 40px 50px -30px var(--pink) inset, 
+                35px -35px 38px var(--blue2) inset, 
+                -30px -30px 30px var(--blue) inset, 
+                -45px -60px 80px  var(--pink2), 
+                40px -40px 40px var(--blue2),
+                -50px 90px 60px -50px var(--blue2);	
+            }
+        
+            10% {
+                border-radius: 50% 20% 10% 80% / 25% 80% 20% 75%;
+            }
+        
+            20% {
+                border-radius: 67% 33% 47% 53% / 37% 20% 80% 63%;
+                box-shadow: 
+                40px 30px 70px  var(--pink) inset, 
+                35px -45px 38px var(--blue2) inset, 
+                -30px 30px 40px var(--blue) inset, 
+                -55px -60px 80px  var(--pink2), 
+                40px -30px 40px var(--blue2),
+                -35px 70px 60px -40px var(--blue2);
+            }
+        
+            30% {
+                border-radius: 39% 61% 47% 53% / 37% 40% 60% 63%;
+                
+            }
+        
+            40% {
+                border-radius: 39% 61% 82% 18% / 74% 40% 60% 26%;
+                box-shadow: 
+                35px 0px 50px var(--pink) inset, 
+                100px -25px 80px var(--blue2) inset, 
+                -30px 30px 30px var(--blue) inset, 
+                -55px 40px 60px  var(--pink2), 
+                -30px -40px 60px var(--blue2),
+                35px 70px 60px  var(--blue2);
+            }
+        
+            50% {
+                border-radius: 100%;
+            }
+        
+            60% {
+                border-radius: 50% 50% 53% 47% / 72% 69% 31% 28%;
+                box-shadow: 
+                0px -40px 60px var(--pink) inset, 
+                -40px -20px 40px  var(--blue2) inset, 
+                -50px 100px 50px var(--violet) inset, 
+                -20px 40px 50px  var(--pink2), 
+                20px -30px 70px var(--blue2),
+                -25px 0px 50px  var(--blue2);
+            }
+        
+            70% {
+                border-radius: 50% 50% 53% 47% / 26% 22% 78% 74%;
+            }
+        
+            80% {
+                border-radius: 50% 50% 53% 47% / 26% 69% 31% 74%;
+                box-shadow: 
+                -30px 35px 60px var(--pink) inset, 
+                -30px -40px 80px var(--violet) inset, 
+                -30px 40px 90px var(--blue2) inset, 
+                50px -45px 90px  var(--pink2), 
+                30px -40px 90px var(--blue2),
+                -35px 40px 60px  var(--blue2);
+            }
+        
+            90% {
+                border-radius: 20% 80% 20% 80% / 20% 80% 20% 80%;
+            }
+        }
+        
+        @keyframes anim {
+            0%,
+            100% {
+                border-radius: 30% 70% 70% 30% / 30% 52% 48% 70%;		
+            }
+        
+            10% {
+                border-radius: 50% 20% 10% 80% / 25% 80% 20% 75%;
+            }
+        
+            20% {
+                border-radius: 67% 33% 47% 53% / 37% 20% 80% 63%;
+            }
+        
+            30% {
+                border-radius: 39% 61% 47% 53% / 37% 40% 60% 63%;
+            }
+        
+            40% {
+                border-radius: 39% 61% 82% 18% / 74% 40% 60% 26%;
+            }
+        
+            50% {
+                border-radius: 100%;
+            }
+        
+            60% {
+                border-radius: 50% 50% 53% 47% / 72% 69% 31% 28%;
+            }
+        
+            70% {
+                border-radius: 50% 50% 53% 47% / 26% 22% 78% 74%;
+            }
+        
+            80% {
+                border-radius: 50% 50% 53% 47% / 26% 69% 31% 74%;
+            }
+        
+            90% {
+                border-radius: 20% 80% 20% 80% / 20% 80% 20% 80%;
+            }
+        }
+
+    </style>
+    <img src="../img/top-bg.jpg" alt="" class="index-top__img" width="2139" height="809">
+    <div class="container index-top__wrapper">
+        <div class="index-top__content">
+            <h1 class="h1 index-top__h1" >Выделенные команды разработки веб-сервисов и мобильных приложений</h1>
+            <div class="index-top__text">
+                <p>Ускоряем цифровую трансформацию бизнеса, облегчаем переход к технологической независимости, разрабатываем, тестируем, поддерживаем.</p>
+            </div>
+            <a href="#" class="btn btn--rounded btn--violet index-top__btn" data-action="order"><span>Начать проект</span></a>
+        </div>
+        <div class="index-top__blob">
+            
+        </div>
+        <div class="index-top__mouse mouse-icon animate-block">
+            <svg class="animate-elt hovered" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="80" height="80" fill="#fff"><path d="M7.41 14.58 12 19.17l4.59-4.59L18 16l-6 6-6-6 1.41-1.42m0-6L12 13.17l4.59-4.59L18 10l-6 6-6-6 1.41-1.42m0-6L12 7.17l4.59-4.59L18 4l-6 6-6-6 1.41-1.42Z"></path></svg>
+        </div>
+    </div>
+</section>

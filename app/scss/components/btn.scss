@@ -1,0 +1,82 @@
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 0;
+    padding: 0;
+    margin: 0;
+    background-color: transparent;
+    border: 0;
+    font-family: inherit;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+//.btn--violet::before {
+//    position:absolute;
+//    content: '';
+//    top: 0;
+//    left: 1px;
+//    width: calc(100% - 2px);
+//    height: calc(100% + 1px);
+//    background-color: var(--white);
+//    border-radius: 24px;
+//}
+
+.btn--violet {
+    position: relative;
+}
+
+.btn--violet span,
+.form__btn {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 16px 54px;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+    color: white;
+    background-color: var(--violet);
+    transition: color 0.4s ease-in-out, 
+        box-shadow 0.4s ease-in-out;
+    -webkit-appearance: none;
+
+    &:disabled{
+        opacity: 0.6;
+    }
+
+    &:hover,
+    &:focus {
+        background-color: var(--pink);
+        box-shadow: 0px 8px 12px rgba(249, 78, 148, 0.32);
+    }
+
+    &:active {
+        color: var(--white);
+        background-color: #3c3817;;
+    }
+
+    span {
+        position: relative;
+        z-index: 1;
+    }
+}
+
+.form__btn {
+    overflow: hidden;
+    border-radius: 24px;
+    width: auto;
+
+    &::before {
+        display: none;
+    }
+}
+
+.btn--rounded span {
+    border-radius: 24px;
+    
+}
+

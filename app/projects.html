@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <title>Название сайта</title>
+
+    <link rel="stylesheet" href="css/style.css" >
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="format-detection" content="telephone=no">
+  </head>
+  <body >
+    <include src="app/html/header-inside.html"></include>
+    <main class="main">
+      <include src="app/html/top-naked.html" locals='{"name": "Кейсы"}'></include>
+      <section class="projects inside-page">
+        <div class="projects__container container ">
+          <include src="app/html/projects-tag-list.html"></include>
+          <include src="app/html/projects-list.html"></include>
+        </div>
+      </section>
+    </main>
+    <include src="app/html/footer.html"></include>
+    <include src="app/html/popup.html"></include>
+    <script src="js/index.js"></script>
+  </body>
+</html>

@@ -1,0 +1,42 @@
+:root {
+    --white: #ffffff;
+    --violet: #A12CDD;
+    --violet2: #EBD6F7;
+    --violet-opacity02: rgba(161,44,221, 0.2);
+    --text: #474748;
+    --gray: #F8F8F8;
+    --gray2: #E1E1E1;
+    --gray3: #e5e5e5;
+    --gray4: #7C7C7C;
+    --gray5: #B5B5B6;
+    --pink: #F94E94;
+    --red: #E20019;
+    --large-screen: 1472px;
+    --tablet-screen: 740px;
+    --mobile-screen: 320px;
+    --padding: 16px;
+    --section-margin-bottom: 60px;
+    --margin-100px: 60px;
+}
+
+$small: 768px;
+$desktop-large: 1472px;
+
+@media (min-width: 540px) {
+    :root {
+        --section-margin-bottom: 100px;
+    }
+}
+
+@media (min-width: $small) {
+    :root {
+        --margin-100px: 80px;
+    }
+}
+
+
+@media (min-width: 1000px) {
+    :root {
+        --margin-100px: 100px;
+    }
+}

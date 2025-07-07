@@ -1,0 +1,50 @@
+.cooperation-item {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: 16px;
+}
+
+.cooperation-item__name {
+    margin: 0;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 130%;
+}
+
+.cooperation-item__content ul {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: 10px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    li {
+        position: relative;
+        padding-left: 22px;
+        font-size: 14px;
+        line-height: 130%;
+
+        &::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 4px;
+            width: 10px;
+            height: 10px;
+            background-color: var(--violet);
+            border-radius: 50%;
+        }
+    }
+}
+
+@media (min-width: 540px) {
+    .cooperation-item__measure {
+        align-self: flex-end;
+    }
+
+    .cooperation-item__name {
+        font-size: 20px;
+    }
+}
+

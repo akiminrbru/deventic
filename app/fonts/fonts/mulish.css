@@ -1,0 +1,6 @@
+@font-face {
+	font-family: 'Mulish';
+	src: url('Mulish-BlackItalic.woff2') format('woff2'), url('Mulish-BlackItalic.woff') format('woff');
+	font-weight: 900;
+	font-style: italic;
+}

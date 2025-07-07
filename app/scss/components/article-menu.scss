@@ -1,0 +1,37 @@
+.article-menu {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 16px;
+    padding-bottom: 50px;
+    margin: 0;
+    padding-left: 0;
+    border-bottom: 1px solid rgba(71,71,72, 0.2);
+    list-style: none;
+}
+
+.article-menu a {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 130%;
+    text-decoration-line: underline;
+    color: var(--text);
+    transition: color 0.3s ease-in-out;
+
+    &:hover,
+    &:focus {
+        color: var(--violet);
+    }
+
+    &:active {
+        color: var(--pink);
+    }
+}
+
+@media (min-width: 540px) {
+    .article-menu {
+        flex-direction: row;
+        flex-wrap: wrap;
+        column-gap: 32px;
+    }
+}

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <title>Название сайта</title>
+
+    <link rel="stylesheet" href="css/style.css" >
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="format-detection" content="telephone=no">
+  </head>
+  <body >
+    <include src="app/html/header.html"></include>
+    <main class="main">
+      <include src="app/html/top-with-photo.html"></include>
+      <section class="project inside-page">
+        <div class="project__container container">
+          <div class="project__container--inside">
+            <include src="app/html/project-content.html"></include>
+            <include src="app/html/project-form.html"></include>
+          </div>
+          <include src="app/html/cases-project.html"></include>
+        </div>
+      </section>
+    </main>
+    <include src="app/html/footer.html"></include>
+    <include src="app/html/popup.html"></include>
+    <script src="js/index.js"></script>
+  </body>
+</html>

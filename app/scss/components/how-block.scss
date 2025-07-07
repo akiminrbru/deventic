@@ -1,0 +1,24 @@
+.how-block {
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+.how-block__bloks {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: 12px;
+}
+
+@media (min-width: 540px) {
+    .how-block__bloks {
+        row-gap: 14px;
+    }
+}
+
+@media (min-width: 1000px) {
+    .how-block__bloks {
+        grid-template-columns: repeat(4, minmax(0, 4fr));
+        column-gap: 18px;
+        align-items: flex-start;
+    }
+}

@@ -1,0 +1,64 @@
+.feedback__wrapper {
+    position: relative;
+    padding-top: 36px;
+    padding-bottom: 97px;
+    padding-left: 36px;
+    padding-right: 36px;
+    background-image: url('../img/feedback-bg.svg');
+    background-repeat: no-repeat;
+    background-position: bottom left;
+    border-radius: 24px;
+    overflow: hidden;
+}
+
+.feedback__container {
+    opacity: 1;
+    transition: opacity 0.6s ease-in-out;
+}
+
+.feedback__container.hovered {
+    opacity: 0;
+    transition: opacity 0.6s ease-in-out;
+}
+
+@media (min-width: 540px) {
+    .feedback__wrapper {
+        position: relative;
+        
+        overflow: hidden;
+
+        &::before {
+            content: '';
+            position: absolute;
+            right: 94px;
+            bottom: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 140px;
+            height: 140px;
+            opacity: 0.3;
+            background-repeat: no-repeat;
+            background-image: url('../img/quotes.svg');
+        }
+    }
+}
+
+@media (min-width: 1000px) {
+    .feedback__wrapper {
+        display: grid;
+        padding-inline: 0;
+        grid-template-columns: minmax(0, 4fr)  minmax(0, 7fr) minmax(0, 1fr);
+        gap: 18px;
+    }
+
+    .feedback__h2 {
+        position: relative;
+        padding-left: 36px;
+    }
+
+    .feedback__slider-wrapper {
+        padding-right: 36px;
+        grid-column: span 2;
+    }
+}

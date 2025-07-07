@@ -1,0 +1,74 @@
+.career__top {
+  display:flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.career__links {
+  display: flex;
+  gap: 10px;
+}
+
+.career__link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  color: var(--text);
+  opacity: 0.72;
+  text-decoration: none;
+  border-radius: 50%;
+  transition: color 0.3s ease-in-out, opacity 0.3s ease-in-out;
+
+  &:hover {
+   color: var(--red);
+   opacity: 1;
+  }
+}
+
+.career__link--habr {
+  background-color: #010101;
+  transition: color 0.3s ease-in-out, opacity 0.3s ease-in-out;
+
+  &:hover {
+    color: #6274BC;
+    opacity: 1;
+  }
+
+  img {
+    position: relative;
+    right: -4px;
+    width: 46px;
+    height: 49px;
+  }
+}
+
+.career__item {
+  border-top: 1px solid var(--gray3); 
+
+  &:last-child {
+    border-bottom: 1px solid  var(--gray3); 
+  }
+}
+
+@media (max-width: 999px) {
+  .career__links {
+    display: none;
+  }
+}
+
+@media (min-width: 1000px) {
+  .career__h2 {
+    margin-bottom: 0;
+  }
+
+  .career__top {
+    margin-bottom: 80px;
+  }
+
+  .career__links {
+    gap: 24px;
+  }
+
+}

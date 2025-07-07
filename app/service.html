@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <title>Название сайта</title>
+
+    <link rel="stylesheet" href="css/style.css" >
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="format-detection" content="telephone=no">
+  </head>
+  <body >
+    <include src="app/html/header.html"></include>
+    <main class="main">
+      <include src="app/html/top-with-service.html" locals='{"name": "Блог"}'></include>
+      <section class="service">
+        <include src="app/html/service-top.html"></include>
+        <include src="app/html/cases.html"></include>
+        <include src="app/html/service-how.html"></include>
+        <include src="app/html/blog-slider.html"></include>
+        <include src="app/html/service-services.html"></include>
+        <include src="app/html/bottom-form.html"></include>
+      </section>
+    </main>
+    <include src="app/html/footer.html"></include>
+    <include src="app/html/popup.html"></include>
+    <script src="js/index.js"></script>
+  </body>
+</html>

@@ -1,0 +1,270 @@
+.text {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 130%;
+
+    h2 {
+        margin-top: 0;
+        margin-bottom: 12px;
+        font-weight: 700;
+        font-size: 14px;
+    }
+
+    p {
+        margin-top: 0;
+        margin-bottom: 16px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    p + h2,
+    ul + h2,
+    ol + h2 {
+        padding-top: 16px;
+    }
+
+    &>div:not(:last-child) {
+        margin-bottom: 16px;
+    }
+
+    ul {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        row-gap: 10px;
+        margin: 0;
+        margin-bottom: 16px;
+        padding: 0;
+        list-style: none;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        li {
+           position: relative;
+           padding-left: 22px;
+
+            &::before {
+                content:'';
+                position: absolute;
+                left: 0;
+                top: 4px;
+                width: 10px;
+                height: 10px;
+                border-radius: 50%;
+                background-color: var(--violet);
+            }
+        }
+    }
+
+    figure {
+        margin: 0;
+        margin-bottom: 16px;
+        width: 100%;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    figure + h2 {
+        margin-top: 50px;
+    }
+
+    figure + p {
+        margin-top: 32px;
+    }
+
+    figcaption {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 130%;
+        color: rgba(71, 71, 72, 0.6);
+    }
+
+    img {
+        border-radius: 24px;
+        overflow: hidden;
+        margin-bottom: 12px;
+        width: 100%;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    .two-cols {
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: 16px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    p + .two-cols {
+        margin-top: 32px;
+    }
+
+    blockquote {
+        position: relative;
+        padding-top: 24px;
+        padding-bottom: 24px;
+        padding-left: 0;
+        padding-right: 0;
+        margin: 0;
+        font-size: 14px;
+        line-height: 150%;
+        color: rgba(71, 71, 72, 0.7);
+        border-top:  1px solid rgba(161,44,221, 0.2);
+        border-bottom:  1px solid rgba(161,44,221, 0.2);
+    
+        &::before {
+            content: '';
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 140px;
+            height: 140px;
+            opacity: 0.3;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-image: url("../img/quotes.svg");
+        }
+    }
+
+    ul + blockquote,
+    .two-cols + blockquote {
+        margin-top: 50px;
+    }
+
+    blockquote + h2 {
+        margin-top: 50px;
+    }
+
+    .two-cols + ul,
+    .two-cols + p {
+        margin-top: 32px;
+    }
+
+    figure + blockquote {
+        margin-top: 24px;
+    }
+
+    .two-cols {
+        figure + blockquote {
+            margin-top: 8px;
+        }
+    }
+}
+
+.article__text {
+    h2 {
+        margin-bottom: 16px;
+    }
+
+    ul + figure,
+    ol + figure {
+        padding-top: 16px;
+    }
+
+    ul + h2 {
+        padding-top: 0;
+        margin-top: 50px;
+    }
+
+    p + h2 {
+        margin-top: 50px;
+        padding-top: 0;
+    }
+
+    &>div:not(:last-child) {
+        margin-bottom: 50px;
+    }
+
+    a {
+        color: var(--text);
+        text-decoration: underline;
+        transition: color 0.3s ease-in-out;
+
+        &:hover,
+        &:focus {
+            color: var(--violet);
+        }
+
+        &:visited {
+            color: var(--text);
+        }
+
+        &:active {
+            color: var(--pink);
+        }
+    }
+}
+
+@media (min-width: 540px) {
+    .text {
+        font-size: 16px;
+        
+        h2 {
+            font-size: 24px;
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    .text {
+        .two-cols {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            column-gap: 24px;
+            row-gap: 16px;
+            align-items: center;
+
+            figure {
+                margin: 0;
+            }
+
+            blockquote {
+                margin: 0;
+            }
+
+            figure + blockquote {
+                margin-top: 0;
+            }
+        }
+
+        blockquote {
+            font-size: 24px;
+            line-height: 150%;
+        }
+
+        blockquote::before {
+            right: 83px;
+        }
+    }
+}
+
+@media (min-width: 1000px) {
+    .text {
+        
+        h2 {
+            font-size: 24px;
+        }
+
+        blockquote::before {
+            right: 91px;
+        }
+    }
+
+    .text-cols {
+        column-count: 2;
+        column-gap: 36px;
+    }
+}

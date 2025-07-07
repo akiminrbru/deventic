@@ -1,0 +1,17 @@
+.stack-item {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: 16px;
+    justify-items: center;
+}
+
+.stack-item__img {
+    margin: 0;
+}
+
+.stack-item__name {
+    margin: 0;
+    font-size: 14px;
+    line-height: 130%;
+    text-align: center;
+}

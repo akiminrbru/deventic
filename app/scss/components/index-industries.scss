@@ -1,0 +1,133 @@
+.industries__container {
+    opacity: 1;
+    transition: opacity 0.6s ease-in-out;
+}
+
+.industries__container.hovered {
+    opacity: 0;
+    transition: opacity 0.6s ease-in-out;
+}
+
+@media (max-width: 999px) {
+    .industries__wrapper {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .industries__item {
+        
+        border-bottom: 1px solid var(--gray3);
+
+        &:last-child {
+            border-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        &:nth-last-child(2):not(:nth-child(2n)) {
+            border-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        &:first-child {
+            padding-top: 0;
+        }
+
+        &:nth-child(2) {
+            padding-top: 0;
+        }
+
+    }
+
+    .industries__item:nth-child(2n+1) {
+        padding-right: 16px;
+        border-right: 1px solid  var(--gray3);
+    }
+
+    .industries__item:nth-child(2n) {
+        padding-left: 16px;
+    }
+}
+@media (min-width: 1000px) {
+    .industries__wrapper {
+       position: relative;
+       display: grid;
+       grid-template-columns: repeat(3, minmax(0, 4fr));
+       column-gap: 18px;
+       flex-wrap: wrap;
+
+       &::before {
+        content: '';
+        position:absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 1;
+        height: 1px;
+        background-color: var(--white);
+       }
+
+    }
+
+    .industries__item {
+        position: relative;
+
+        &:before {
+            content: '';
+            position:absolute;
+            bottom: 0;
+            left: 0;
+            width: calc(100% + 18px);
+            border-bottom: 1px solid  var(--gray3);
+        }
+
+        &:nth-child(3n)::before {
+            width: calc(100%);
+        }
+        
+    }
+
+    .industries__item:nth-child(3n+2) {
+        flex-basis: calc((100% / 3) + 9px);
+        padding-left: 24px;
+        padding-right: 24px;
+        
+
+        &:after {
+            content: '';
+            position:absolute;
+            right: -18px;
+            top: 0;
+            height: 100%;
+            border-left: 1px solid  var(--gray3);
+        }
+    }
+
+    .industries__item:nth-child(3n+1) {
+        
+        flex-basis: calc((100% / 3) + 9px);
+        // border-right: 1px solid  var(--gray3);
+
+        &:after {
+            content: '';
+            position:absolute;
+            right: -18px;
+            top: 0;
+            height: 100%;
+            border-left: 1px solid  var(--gray3);
+        }
+    }
+
+    .industries__item:nth-child(3n) {
+        padding-left: 24px;
+        flex-basis: calc((100% / 3) - 18px);
+
+        
+    }
+
+    // .industries__item:last-child,
+    // .industries__item:nth-last-child(2),
+    // .industries__item:nth-last-child(3) {
+      
+    //     padding-bottom: 0;
+    // }
+}

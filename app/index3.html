@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <title>Название сайта</title>
+
+    <link rel="stylesheet" href="css/style.css" >
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="format-detection" content="telephone=no">
+  </head>
+  <body >
+    <include src="app/html/header.html"></include>
+    <main class="main">
+      <include src="app/html/index-top3.html"></include>
+      <include src="app/html/scope.html"></include>
+      <include src="app/html/advantages.html"></include>
+      <include src="app/html/index-industries.html"></include>
+      <!--<include src="app/html/index-stack.html"></include>-->
+      <include src="app/html/feedback.html" locals='{"name": "Что говорят наши клиенты"}'></include>
+      <include src="app/html/index-cooperation2.html"></include>
+      <!--<include src="app/html/index-cooperation.html"></include>-->
+      <include src="app/html/cases.html"></include>
+      <include src="app/html/bottom-form.html"></include>
+    </main>
+    <include src="app/html/footer.html"></include>
+    <include src="app/html/popup.html"></include>
+    <script src="js/index.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/105/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/simplex-noise/2.4.0/simplex-noise.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.124/examples/js/loaders/RGBELoader.js"></script>
+    <script>
+      let canvas = document.querySelector('.index-top__blob canvas');
+      const renderer = new THREE.WebGLRenderer({
+          canvas: canvas,
+          context: canvas.getContext('webgl2'),
+          antialias: true,
+          alpha: true,
+      });
+      simplex = new SimplexNoise();
+      renderer.setSize(canvas.getBoundingClientRect().width, canvas.getBoundingClientRect().height);
+      renderer.setPixelRatio(window.devicePixelRatio || 1);
+      let scene = new THREE.Scene();
+      let camera = new THREE.PerspectiveCamera(45, canvas.getBoundingClientRect().width / canvas.getBoundingClientRect().height, 0.1, 1000);
+      camera.position.z = 5;
+      let geometry = new THREE.SphereGeometry(0.8, 128, 128);
+      // let material = new THREE.MeshPhongMaterial({
+      //     color: 0xE4ECFA,
+      //     shininess: 100,
+      //     transparent: true,
+      //     opacity: 0.4,
+      // });
+
+      const options = {
+        enableSwoopingCamera: false,
+        enableRotation: true,
+        transmission: 1,
+        thickness: 1.5,
+        roughness: 0.1,
+        envMapIntensity: 1.5
+      };
+
+      const hdrEquirect = new THREE.RGBELoader().load(
+        "/img/empty_warehouse_01_2k.hdr",
+        () => {
+          hdrEquirect.mapping = THREE.EquirectangularReflectionMapping;
+        }
+      );
+
+      const material = new THREE.MeshPhysicalMaterial({
+        transmission: options.transmission,
+        thickness: options.thickness,
+        roughness: options.roughness,
+        transparent: true,
+        opacity: 0.5,
+        envMap: hdrEquirect
+      });
+
+      let lightTop = new THREE.DirectionalLight(0xFFFFFF, .7);
+      lightTop.position.set(0, 500, 200);
+      lightTop.castShadow = true;
+      scene.add(lightTop);
+
+      let lightBottom = new THREE.DirectionalLight(0xFFFFFF, .25);
+      lightBottom.position.set(0, -500, 400);
+      lightBottom.castShadow = true;
+      scene.add(lightBottom);
+
+      let ambientLight = new THREE.AmbientLight(0x798296);
+      scene.add(ambientLight);
+
+      let sphere = new THREE.Mesh(geometry, material);
+
+      scene.add(sphere);
+      let spikesSlider = 0.6;
+      let processingSlider = 1;
+      let speedSlider = 13;
+
+      let update = () => {
+
+        let time = performance.now() * 0.00001 * speedSlider * Math.pow(processingSlider, 3),
+            spikes = spikesSlider * processingSlider;
+        for(let i = 0; i < sphere.geometry.vertices.length; i++) {
+            let p = sphere.geometry.vertices[i];
+            p.normalize().multiplyScalar(1 + 0.3 * simplex.noise3D(p.x * spikes, p.y * spikes, p.z * spikes + time));
+        }
+
+        sphere.geometry.computeVertexNormals();
+        sphere.geometry.normalsNeedUpdate = true;
+        sphere.geometry.verticesNeedUpdate = true;
+
+      }
+
+      function animate() {
+        update();
+        renderer.render(scene, camera);
+        requestAnimationFrame(animate);
+      }
+
+      requestAnimationFrame(animate);
+  </script>
+  </body>
+</html>

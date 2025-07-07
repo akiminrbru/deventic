@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <title>Название сайта</title>
+
+    <link rel="stylesheet" href="css/style.css" >
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="format-detection" content="telephone=no">
+  </head>
+  <body >
+    <include src="app/html/header.html"></include>
+    <main class="main">
+      <include src="app/html/top-with-hh.html" locals='{"name": "Блог"}'></include>
+      <include src="app/html/hh-how.html"></include>
+      <include src="app/html/hh-industries.html"></include>
+      <include src="app/html/hh-values.html"></include>
+      <include src="app/html/career.html"></include>
+      <include src="app/html/feedback.html" locals='{"name": "Что говорят наши сотрудники"}'></include>
+      <include src="app/html/qa.html"></include>
+      <section class="bottom-form animate-block bottom-form--hh" style="background-image:url(../img/form-bg.png)" >
+        <div class="container bottom-form__container animate-elt">
+          <div class="bottom-form__h2 h2--hh-form">
+            <h2 class="h2">Не нашли нужную вакансию?</h2>
+            <p class="bottom-form__txt">Напишите нам, и мы что-нибудь придумаем.</p>
+          </div>
+            <include src="app/html/form.html" locals='{"class":"bottom-form__form", "news": "false"}'></include>
+        </div>
+    </section>
+    </main>
+    <include src="app/html/footer.html"></include>
+    <include src="app/html/popup.html"></include>
+    <include src="app/html/popup-s.html"></include>
+    <script src="js/index.js"></script>
+  </body>
+</html>

@@ -1,0 +1,38 @@
+.author {
+    display: flex;
+    align-items: center;
+    padding: 24px;
+    column-gap: 16px;
+    border-radius: 24px;
+}
+
+.author__img {
+    width: 70px;
+    height: 70px;
+    overflow: hidden;
+    border-radius: 24px;
+}
+
+.author__details {
+    display: flex;
+    flex-direction: column;
+    row-gap: 6px;
+    
+    p {
+        margin: 0;
+    }
+}
+
+.author__name {
+    margin: 0;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 130%;
+    text-decoration: none;
+}
+
+.author__position {
+    margin: 0;
+    font-size: 14px;
+    line-height: 130%;
+}

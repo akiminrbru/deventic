@@ -1,0 +1,51 @@
+.scope__numbers {
+    opacity: 1;
+    transition: opacity 0.6s ease-in-out;
+}
+
+.scope__numbers.hovered {
+    opacity: 0;
+    transition: opacity 0.6s ease-in-out;
+}
+
+.scope__items {
+    opacity: 1;
+    transition: opacity 0.10s ease-in-out;
+}
+
+.scope__items.hovered {
+    opacity: 0;
+    transition: opacity 0.10s ease-in-out;
+}
+
+.scope__items {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: 18px;
+}
+
+.scope__h2 {
+    opacity: 1;
+    transition: opacity 0.6s ease-in-out;
+}
+
+.scope__h2.hovered {
+    opacity: 0;
+    transition: opacity 0.6s ease-in-out;
+}
+
+@media (min-width: 540px) {
+    .scope__items {
+        grid-template-columns: repeat(2, minmax(0, 3fr));
+        column-gap: 16px;
+        row-gap: 16px;
+    }
+}
+
+@media (min-width: 1000px) {
+    .scope__items {
+        grid-template-columns: repeat(3, minmax(0, 4fr));
+        column-gap: 18px;
+        row-gap: 18px;
+    }
+}

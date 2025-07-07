@@ -1,0 +1,13 @@
+<aside class="article__aside gray">
+    <include src="app/html/article-share.html"></include>
+    <form action="" class="article__form form">
+        <h3 class="h3">Подпишитесь на нашу рассылку</h3>
+        <label  class="form__label">
+            <input type="email" name="e-mail" class="input form__input required" placeholder="alexsandr.petrov@mail.ru">
+            <span class="form__input-name">Ваш e-mail*</span>
+            <span class="form__mistake">Это поле обязательно для заполнения</span>
+         </label>
+        <button type="submit" class="btn btn--rounded btn--violet form__btn">Оставить заявку</button>
+    </form>
+    <include src="app/html/blog-popular.html" locals='{"class": "article__popular"}'></include>
+</aside>

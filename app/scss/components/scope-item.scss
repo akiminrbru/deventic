@@ -1,0 +1,134 @@
+.scope-item {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 2fr));
+    gap: var(--padding);
+    height: 160px;
+    text-decoration: none;    
+    color: var(--text);
+    // background-image: url('../img/service-item_bg.svg');
+    // background-repeat: no-repeat;
+    // background-size: cover;
+    border-radius: 24px;
+    overflow: hidden;
+    isolation: isolate;
+    transition: box-shadow 0.3s ease-in-out;
+
+    // &::before {
+    //     content: '';
+    //     position: absolute;
+    //     top: 0;
+    //     left: 0;
+    //     z-index: -1;
+    //     width: 100%;
+    //     height: 100%;
+    //     background: var(--violet2);
+    // }
+
+    // &::after {
+    //     content: '';
+    //     position: absolute;
+    //     top: 0;
+    //     left: 0;
+    //     width: 100%;
+    //     height: 100%;        
+    //     background: var(--violet);
+    //     mix-blend-mode: screen;
+    // }
+
+    &:hover,
+    &:focus {
+        box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.24);
+
+        .scope-item__img {
+            transform: translate(-50%, -50%) scale(1.1);
+        }
+    }
+}
+
+.scope-item__inside {
+    position: absolute;
+    top: 0;
+    left: 0;
+    isolation: isolate;
+    width: 100%;
+    height: 100%;
+    border-radius: 24px;
+    overflow: hidden;
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;        
+        background: var(--violet);
+        mix-blend-mode: screen;
+    }
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        width: 100%;
+        height: 100%;
+        background-color: var(--violet2);
+        background-image: url('../img/service-item_bg.svg');
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+}
+
+.scope-item__img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+    transform: translate(-50%, -50%);
+    transition: transform 0.5s ease-in-out;
+}
+
+.scope-item__content {
+    position: relative;
+    z-index: 1;
+    padding: 24px 0 24px 24px;
+}
+
+.scope-item__name {
+    margin: 0;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 120%;
+}
+
+.scope-item__svg {
+    position:absolute;
+    left: 24px;
+    bottom: 0;
+    width: 36px;
+    transform: translateY(-50%);
+
+    svg {
+        width: 100%;
+    }
+}
+
+@media (min-width: 540px) {
+    .stack-item__name {
+        font-size: 16px;
+    }
+}
+
+@media (min-width: 768px) {
+    .scope-item {
+        height: 200px;
+    }
+
+    .scope-item__name {
+        font-size: 24px;
+    }
+}
