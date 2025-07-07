@@ -9,6 +9,8 @@ import { checkField } from './components/utils';
 import { phoneMask } from './components/phone-mask';
 import { animateElts } from './components/animation';
 import { tabsOpener } from './components/tabs';
+import { faqsOpener } from './components/faq';
+import { priceOpener } from './components/price-service';
 Swiper.use([Navigation, Pagination, Autoplay, EffectFade]);
 
 // Если будет не нужна - убрать
@@ -188,3 +190,14 @@ try {
 	console.log(e);
 }
 
+try {
+	faqsOpener();
+} catch(e) {
+	console.log(e);
+}
+
+try {
+	priceOpener();
+} catch(e) {
+	console.log(e);
+}

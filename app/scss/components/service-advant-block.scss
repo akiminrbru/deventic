@@ -1,0 +1,63 @@
+.advant-block {
+    background-image: url('../img/service-advant-bg.svg');
+    background-color: var(--violet3);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.advant-block__inner {
+    padding: 100px 0;
+    gap: 142px;
+    display: grid;
+    grid-template-columns: minmax(300px, 1fr) minmax(500px, 710px);
+}
+
+.advant-block__text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 40px;
+}
+
+.advant-block__h2 {
+    color: var(--white);
+    margin: 0;
+}
+
+.advant-block__bloks {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.advant-block-btn-mobile {
+    display: none;
+}
+
+@media screen and (max-width: 1200px) {
+    .advant-block__inner {
+        gap: 50px;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .advant-block__inner {
+       display: flex;
+       flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .advant-block__inner {
+        padding: 50px 0;
+        gap: 20px;
+    }
+
+    .advant-block-btn-desc {
+        display: none;
+    }
+
+    .advant-block-btn-mobile {
+        display: flex;
+    }
+}

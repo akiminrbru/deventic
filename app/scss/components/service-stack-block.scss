@@ -1,0 +1,39 @@
+.stack-block__inner {
+    background-color: var(--gray);
+    border-radius: 24px;
+    padding: 30px;
+    position: relative;
+    overflow: hidden;
+}
+
+.stack-block__bloks {
+    display: grid;
+    grid-template-columns: repeat(3, 210px);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 5px;
+    position: relative;
+    z-index: 1;
+}
+
+.stack-block__bg {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+@media screen and (max-width: 768px) {
+    .stack-block__bg {
+        display: none;
+    }
+
+    .stack-block__inner {
+        background-color: transparent;
+        padding: 0;
+        overflow: visible;
+    }
+
+    .stack-block__bloks {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto;
+    }
+}

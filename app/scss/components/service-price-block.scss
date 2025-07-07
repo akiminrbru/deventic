@@ -1,0 +1,125 @@
+.price-block {
+    background-image: url('../img/service-advant-bg.svg');
+    background-color: var(--violet3);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.price-block__inner {
+    padding: 100px 0;
+}
+
+.price-block__h2 {
+    color: var(--white);
+}
+
+.price-block__box {
+    display: grid;
+    grid-template-columns: 588px 1fr;
+    gap: 19px;
+}
+
+.price-block__list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.price-item {
+    border: 1px solid var(--violet5);
+    border-radius: 24px;
+    padding: 30px;
+    background-color: var(--violet3);
+    display: flex;
+    flex-direction: column;
+    gap: 56px;
+    cursor: pointer;
+}
+
+.price-item.active {
+    background-color: var(--violet);
+}
+
+.price-item__plan {
+    font-weight: 500;
+    font-size: 24px;
+    color: var(--white);
+    margin: 0;
+    pointer-events: none;
+}
+
+.price-item__price {
+    font-weight: 600;
+    font-size: 34px;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: normal;
+    pointer-events: none;
+}
+
+.price-item.active .price-item__price {
+    color: var(--white);
+}
+
+.price-block__content {
+    border-radius: 24px;
+    border: 1px solid transparent;
+    background: url('../img/service-price-bg.png') padding-box,
+    linear-gradient(to right, #BF79E3, #69437D) border-box;
+    padding: 40px;
+    display: none;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.price-block__content.active {
+    display: flex;
+}
+
+.price-block__content-top {
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+    align-items: flex-start;
+}
+
+.price-block__content-plan {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 1.15;
+    color: var(--white);
+}
+
+.price-block__content-info {
+    margin: 0;
+    font-weight: 500;
+    font-size: 34px;
+    color: var(--white);
+    line-height: normal;
+}
+
+.price-block__content-tag {
+    display: inline-flex;
+    background-color: var(--white);
+    border-radius: 50px;
+    padding: 8px 15px;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 117%;
+    color: var(--violet);
+}
+
+.price-block-btn {
+    margin-top: auto;
+}
+
+.price-block__content-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin: 0;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.17;
+    color: var(--white);
+    padding-left: 27px;
+}

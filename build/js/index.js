@@ -11043,6 +11043,41 @@ var tabsOpenerOutOfArea = function tabsOpenerOutOfArea(className, elementClassNa
     return toggler.addEventListener('click', openHandler);
   });
 };
+;// CONCATENATED MODULE: ./app/js/components/faq.js
+var faqsOpener = function faqsOpener() {
+  var items = document.querySelectorAll(".faq-item");
+  items === null || items === void 0 ? void 0 : items.forEach(function (item) {
+    item.addEventListener('click', function (el) {
+      console.log({
+        el: el
+      });
+      el.target.classList.toggle('active');
+    });
+  });
+};
+;// CONCATENATED MODULE: ./app/js/components/price-service.js
+var priceOpener = function priceOpener() {
+  var buttons = document.querySelectorAll('.price-item');
+  var contents = document.querySelectorAll('.price-block__content');
+  buttons === null || buttons === void 0 ? void 0 : buttons.forEach(function (btn) {
+    btn.addEventListener('click', function (el) {
+      var id_btn = el.target.getAttribute('data-index');
+      resetButtons();
+      el.target.classList.toggle('active');
+      contents.forEach(function (content) {
+        var id_content = content.getAttribute('data-index');
+        content.classList.remove('active');
+        if (id_btn === id_content) content.classList.add('active');
+      });
+    });
+  });
+
+  var resetButtons = function resetButtons() {
+    buttons.forEach(function (item) {
+      return item.classList.remove('active');
+    });
+  };
+};
 ;// CONCATENATED MODULE: ./app/js/index.js
 
 
@@ -11050,6 +11085,8 @@ var tabsOpenerOutOfArea = function tabsOpenerOutOfArea(className, elementClassNa
 
  //import { Fancybox } from "@fancyapps/ui";
 // import { successTemplate } from './components/success-template';
+
+
 
 
 
@@ -11236,6 +11273,18 @@ try {
 
 try {
   tabsOpener('.js-tabs-toggler', '.js-tabs-toggler-body');
+} catch (e) {
+  console.log(e);
+}
+
+try {
+  faqsOpener();
+} catch (e) {
+  console.log(e);
+}
+
+try {
+  priceOpener();
 } catch (e) {
   console.log(e);
 }

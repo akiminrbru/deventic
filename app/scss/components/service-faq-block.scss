@@ -1,0 +1,42 @@
+.faq-block__inner {
+    display: flex;
+    gap: 20px;
+}
+
+.faq-block__img {
+    position: relative;
+    width: 588px;
+    height: 609px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.faq-block__img img {
+    position: absolute;
+    right: -3px;
+    width: 100%;
+    height: auto;
+}
+
+.faq-block__items {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.faq-block__img {
+    width: 400px;
+    height: 420px;
+}
+
+@media screen and (max-width: 992px) {
+    .faq-block__img {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .faq-block__items {
+        gap: 10px;
+    }
+}
