@@ -11043,7 +11043,7 @@ var tabsOpenerOutOfArea = function tabsOpenerOutOfArea(className, elementClassNa
     return toggler.addEventListener('click', openHandler);
   });
 };
-;// CONCATENATED MODULE: ./app/js/components/faq.js
+;// CONCATENATED MODULE: ./app/js/components/service.js
 var faqsOpener = function faqsOpener() {
   var items = document.querySelectorAll(".faq-item");
   items === null || items === void 0 ? void 0 : items.forEach(function (item) {
@@ -11054,6 +11054,28 @@ var faqsOpener = function faqsOpener() {
       el.target.classList.toggle('active');
     });
   });
+};
+var serviceTabsOpener = function serviceTabsOpener(classLink, classContent) {
+  var buttons = document.querySelectorAll(classLink);
+  var contents = document.querySelectorAll(classContent);
+  buttons === null || buttons === void 0 ? void 0 : buttons.forEach(function (btn) {
+    btn.addEventListener('click', function (el) {
+      var id_btn = el.target.getAttribute('data-index');
+      resetButtons();
+      el.target.classList.toggle('active');
+      contents.forEach(function (content) {
+        var id_content = content.getAttribute('data-index');
+        content.classList.remove('active');
+        if (id_btn === id_content) content.classList.add('active');
+      });
+    });
+  });
+
+  var resetButtons = function resetButtons() {
+    buttons.forEach(function (item) {
+      return item.classList.remove('active');
+    });
+  };
 };
 ;// CONCATENATED MODULE: ./app/js/components/price-service.js
 var priceOpener = function priceOpener() {
@@ -11285,6 +11307,18 @@ try {
 
 try {
   priceOpener();
+} catch (e) {
+  console.log(e);
+}
+
+try {
+  serviceTabsOpener('.price-item', '.price-block__content');
+} catch (e) {
+  console.log(e);
+}
+
+try {
+  serviceTabsOpener('.specs-block__links-item', '.specs-block__content');
 } catch (e) {
   console.log(e);
 }

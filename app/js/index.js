@@ -9,7 +9,7 @@ import { checkField } from './components/utils';
 import { phoneMask } from './components/phone-mask';
 import { animateElts } from './components/animation';
 import { tabsOpener } from './components/tabs';
-import { faqsOpener } from './components/faq';
+import { faqsOpener, serviceTabsOpener } from './components/service';
 import { priceOpener } from './components/price-service';
 Swiper.use([Navigation, Pagination, Autoplay, EffectFade]);
 
@@ -198,6 +198,18 @@ try {
 
 try {
 	priceOpener();
+} catch(e) {
+	console.log(e);
+}
+
+try {
+	serviceTabsOpener('.price-item', '.price-block__content');
+} catch(e) {
+	console.log(e);
+}
+
+try {
+	serviceTabsOpener('.specs-block__links-item', '.specs-block__content');
 } catch(e) {
 	console.log(e);
 }

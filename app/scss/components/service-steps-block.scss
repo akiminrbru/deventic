@@ -1,0 +1,19 @@
+.steps-block__bloks {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+
+@media screen and (max-width: 1200px) {
+    .steps-block__bloks {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .steps-block__bloks {
+       display: flex;
+       flex-direction: column;
+    }
+}
